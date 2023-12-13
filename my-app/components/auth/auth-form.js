@@ -49,19 +49,19 @@ function AuthForm() {
       if (!result.error) {
         router.replace('/users');
       }
-    } else {
-      try {
-        const result = await createUser(enteredEmail, enteredPassword);
-        console.log(result);
+    } //else {
+      //try {
+        //const result = await createUser(enteredEmail, enteredPassword);
+        //console.log(result);
 
         // Use the signIn function for Google within the submitHandler
-        await signIn('google', { redirect: false });
-      } catch (error) {
-        console.log(error);
-      }
+        //await signIn('google', { redirect: false });
+      //} catch (error) {
+       // console.log(error);
+      //}
 
      
-    }
+   // }
   }
 
   return (
@@ -100,12 +100,7 @@ function AuthForm() {
                   {isLogin ? 'Create new account' : 'Login with an existing account'}
                 </button>
               </div>
-              <button
-                  onClick={() => signIn('google')}
-                  className="w-full  flex items-center justify-center gap-2 font-bold shadow-sm rounded-lg py-3 bg-blue-500 text-white transition-all duration-300 ease-in-out focus:outline-none hover:shadow focus:shadow-sm focus:shadow-outline mt-4"
-                >
-                  <FaGoogle size={20} /> Sign in with Google
-                </button>
+            
               
 
 </form>
