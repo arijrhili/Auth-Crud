@@ -11,7 +11,7 @@ export default function Home({ session }) {
   const [sortBy, setSortBy] = useState('');
   const [sortOrder, setSortOrder] = useState('asc');
   const [page, setPage] = useState(1);
-  const [pageSize, setPageSize] = useState(5); // Adjust the page size as needed
+  const [pageSize, setPageSize] = useState(9); // Adjust the page size as needed
 
   useEffect(() => {
     const fetchData = async () => {

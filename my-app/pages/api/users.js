@@ -38,7 +38,7 @@ export default async function handler(req, res) {
 
       const newUser = { email, password }; 
       const result = await insertDocument(client, "users", newUser);
-      res.status(201).json(result.ops[0]);
+      res.status(201).json(result);
       break;
 
       case "DELETE":
