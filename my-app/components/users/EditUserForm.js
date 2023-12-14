@@ -1,7 +1,8 @@
-// EditUserForm.js
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 
 function EditUserForm({ user, onUpdate }) {
+  const router = useRouter();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -10,7 +11,7 @@ function EditUserForm({ user, onUpdate }) {
 
     if (user) {
       setEmail(user.email || '');
-      setPassword(user.password || '');
+      setPassword('');
     } else {
       console.error('Invalid user object:', user);
     }
@@ -38,6 +39,9 @@ function EditUserForm({ user, onUpdate }) {
       if (response.ok) {
         console.log('User updated successfully!');
         onUpdate();
+
+        // Redirect to /users after successful update
+        router.replace('/users');
       } else {
         console.error('Error updating user:', response.statusText);
         console.log('Full response:', await response.json());

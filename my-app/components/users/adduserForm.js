@@ -5,7 +5,7 @@ function AddUserForm() {
   const emailInputRef = useRef();
   const passwordInputRef = useRef();
   const [isInvalid, setIsInvalid] = useState(false);
-  const router = useRouter(); // Initialize useRouter
+  const router = useRouter(); 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -24,14 +24,14 @@ function AddUserForm() {
       return;
     }
 
-    const response = await fetch("http://localhost:3000/api/users", {
+    const response = await fetch(`/api/users`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ email: enteredEmail, password: enteredPassword }),
     });
-
+    
     if (response.ok) {
       console.log("User added successfully!");
       // Redirect to the /users page

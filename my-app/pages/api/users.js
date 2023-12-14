@@ -3,7 +3,6 @@ import {
   insertDocument,
   getAllDocuments,
   deleteDocument,
-  getDocumentById
 } from "../../lib/db";
 
 export default async function handler(req, res) {

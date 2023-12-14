@@ -1,8 +1,6 @@
 import Link from 'next/link';
 import { useSession, signOut } from 'next-auth/react';
-import { BiUser } from 'react-icons/bi';
-import { FiHeart } from 'react-icons/fi';
-import { HiOutlineShoppingBag } from 'react-icons/hi';
+
 import { BsSearch } from 'react-icons/bs';
 import Image from 'next/image';
 import classes from './main-navigation.module.css';

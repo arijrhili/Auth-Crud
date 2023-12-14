@@ -2,8 +2,7 @@ import { verifyPassword } from '@/lib/auth';
 import { connectToDatabase } from '@/lib/db';
 import NextAuth from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
-import GoogleProvider from 'next-auth/providers/google';
-import GitHubProvider from "next-auth/providers/github";
+
 
 export default NextAuth({
   session: {
@@ -38,14 +37,14 @@ export default NextAuth({
         };
       },
     }),
-    GoogleProvider({
-      clientId: process.env.GOOGLE_ID,
-      clientSecret: process.env.GOOGLE_SECRET,
-    }),
-    GitHubProvider({
-      clientId: process.env.GITHUB_ID,
-      clientSecret: process.env.GITHUB_SECRET,
-    }),
+    //GoogleProvider({
+      //clientId: process.env.GOOGLE_ID,
+      //clientSecret: process.env.GOOGLE_SECRET,
+    //}),
+    //GitHubProvider({
+      //clientId: process.env.GITHUB_ID,
+      //clientSecret: process.env.GITHUB_SECRET,
+    //}),
   ],
   secret: process.env.SECRET,
 });
