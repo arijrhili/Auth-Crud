@@ -11,7 +11,7 @@ function EditUserForm({ user, onUpdate }) {
 
     if (user) {
       setEmail(user.email || '');
-      setPassword(user.password ||'');
+      setPassword('');
     } else {
       console.error('Invalid user object:', user);
     }
